@@ -22,7 +22,7 @@
  * @version 4.0
  */
 
-public class UseCase4PalindromeCheckerApp {
+public class main {
 
     /**
      * Application entry point for UC4.
