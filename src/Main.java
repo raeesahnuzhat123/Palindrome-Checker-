@@ -1,13 +1,46 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    IO.println(String.format("Hello and welcome!"));
+/**
+ * =========================================================
+ * MAIN CLASS – UseCase3PalindromeCheckerApp
+ * =========================================================
+ *
+ * Use Case 3: Palindrome Check Using String Reverse
+ *
+ * Description:
+ * This class reverses a string using a loop and checks
+ * whether it is a palindrome.
+ *
+ * Concepts Used:
+ * - For Loop
+ * - String Immutability
+ * - String Concatenation
+ * - equals() Method
+ *
+ * @author Developer
+ * @version 3.0
+ */
 
-    for (int i = 1; i <= 5; i++) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        IO.println("i = " + i);
+public class UseCase3PalindromeCheckerApp {
+
+    public static void main(String[] args) {
+
+        // Original String
+        String input = "madam";
+        String reversed = "";
+
+        // Reverse string using loop
+        for (int i = input.length() - 1; i >= 0; i--) {
+            reversed = reversed + input.charAt(i);
+        }
+
+        // Display original and reversed
+        System.out.println("Original String : " + input);
+        System.out.println("Reversed String : " + reversed);
+
+        // Compare using equals()
+        if (input.equals(reversed)) {
+            System.out.println("Result : It is a Palindrome");
+        } else {
+            System.out.println("Result : It is NOT a Palindrome");
+        }
     }
 }
