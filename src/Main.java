@@ -1,58 +1,51 @@
 /**
  * =========================================================
- * MAIN CLASS – UseCase4PalindromeCheckerApp
+ * MAIN CLASS – UseCase5PalindromeCheckerApp
  * =========================================================
  *
- * Use Case 4: Character Array Based Validation
+ * Use Case 5: Stack-Based Palindrome Checker
  *
  * Description:
- * This class validates a palindrome by converting
- * the string into a character array and comparing
- * characters using the two-pointer technique.
+ * This class validates a palindrome using a Stack.
+ * Characters are pushed into the stack and popped
+ * to compare in reverse order.
  *
- * At this stage, the application:
- * - Converts string to char array
- * - Uses start and end pointers
- * - Compares characters efficiently
- * - Displays the result
- *
- * This reduces extra memory usage.
+ * Concepts Used:
+ * - Stack (LIFO principle)
+ * - Push operation
+ * - Pop operation
+ * - Reversal logic
  *
  * @author Developer
- * @version 4.0
+ * @version 5.0
  */
 
-public class main {
+import java.util.Stack;
 
-    /**
-     * Application entry point for UC4.
-     * @param args Command-line arguments
-     */
+public class UseCase5PalindromeCheckerApp {
+
     public static void main(String[] args) {
 
         // Declare and initialize input string
-        String input = "radar";
+        String input = "noon";
 
-        // Convert string into character array
-        char[] chars = input.toCharArray();
+        // Create a Stack to store characters
+        Stack<Character> stack = new Stack<>();
 
-        // Initialize pointers
-        int start = 0;
-        int end = chars.length - 1;
+        // Push each character of the string into the stack
+        for (char c : input.toCharArray()) {
+            stack.push(c);
+        }
 
         // Assume palindrome initially
         boolean isPalindrome = true;
 
-        // Compare until pointers cross
-        while (start < end) {
-
-            if (chars[start] != chars[end]) {
+        // Pop from stack and compare with original string
+        for (char c : input.toCharArray()) {
+            if (c != stack.pop()) {
                 isPalindrome = false;
                 break;
             }
-
-            start++;
-            end--;
         }
 
         // Display result
